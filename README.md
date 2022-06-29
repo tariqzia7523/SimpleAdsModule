@@ -14,6 +14,8 @@
  native_2
  reward_1
  reward_2
+ 
+ //Following key is Int refers as ad counter which means that interstiall add to be called after how many clicks.
  ad_count
  
  to call or block any type of add use following keys by default all ads are open to be called. values are boolean
