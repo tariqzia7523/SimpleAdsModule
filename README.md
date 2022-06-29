@@ -103,13 +103,12 @@ you can also use TemplateView sepratly
 
 
  <com.module.ads.TemplateView
-            android:id="@+id/nativeTemplateView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:background="@drawable/gnt_outline_shape"
-            app:gnt_template_type="@layout/gnt_medium_template_view"
-            />
+   android:id="@+id/nativeTemplateView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:background="@drawable/gnt_outline_shape"
+    app:gnt_template_type="@layout/gnt_medium_template_view"/>
             
 
 to add open app add following line of code in Application class oncreate method
