@@ -1,5 +1,5 @@
 # SimpleAdsModule
- This project contains library for easy implementation of ad mob according to ad policies. Moreover ad ids are to be set using remort config, these will be called only on release, use following keys in remort config firebase , and values are string
+ This project contains library for easy implementation of ad mob according to ad policies. Moreover ad ids are to be set using remort config (so connect your project to firebase first) These ids will be called only on release, use following keys in remort config firebase , and values are string
  
  app_open
  banner_1
