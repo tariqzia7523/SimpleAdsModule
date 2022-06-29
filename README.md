@@ -29,10 +29,14 @@
   maven { url 'https://jitpack.io' }
   
   then following line in app gradle
-implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.0'
+  
+ implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.0'
 
 # Usage 
+you can refer to MainActivity in sample project
+
 make a global variable 
+  
   addInitilizer = AddInitilizer(applicationContext,this){
              // on add close call back will run in this fun
 
