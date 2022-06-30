@@ -32,7 +32,7 @@
   
   then following line in app gradle
   
- implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.0'
+ implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.1'
 
 # Usage 
 you can refer to MainActivity in sample project
