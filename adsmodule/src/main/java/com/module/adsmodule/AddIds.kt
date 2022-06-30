@@ -1,13 +1,10 @@
 package com.module.ads
 
 import android.app.Activity
-import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.module.adsmodule.BuildConfig
 import java.lang.Exception
 
 class AddIds {
@@ -102,11 +99,13 @@ class AddIds {
             })
     }
 
-    fun getBannerID(context: Activity): String {
+    fun getBannerID(context: Activity,isDubugModeRunnig :Boolean): String {
         var id = ""
-        if (BuildConfig.DEBUG) {
+        if (isDubugModeRunnig) {
+            Log.e("***ADS","banner debug check true")
             return "ca-app-pub-3940256099942544/6300978111" // test id
         }
+        Log.e("***ADS","banner debug check false")
         val mySharedPref = MySharedPref(context)
         if (bannerCounter == 1) {
             id = mySharedPref.getString(MySharedPref.BANNER_1)!!
@@ -115,12 +114,13 @@ class AddIds {
             bannerCounter = 1
             id = mySharedPref.getString(MySharedPref.BANNER_2)!!
         }
+        Log.e("***ADS","banner id "+id)
         return id
     }
 
-    fun getInterstialId(context: Activity): String {
+    fun getInterstialId(context: Activity,isDubugModeRunnig :Boolean): String {
         var id = ""
-        if (BuildConfig.DEBUG) {
+        if (isDubugModeRunnig) {
             return "ca-app-pub-3940256099942544/1033173712" // test id
         }
         val mySharedPref = MySharedPref(context)
@@ -137,12 +137,13 @@ class AddIds {
             interstilCounter = 1
             id = mySharedPref.getString(MySharedPref.INTERSTITIAL_4)!!
         }
+        Log.e("***ADS","Inter id "+id)
         return id
     }
 
-    fun getNativeId(context: Activity): String {
+    fun getNativeId(context: Activity,isDubugModeRunnig :Boolean): String {
         var id = ""
-        if (BuildConfig.DEBUG) {
+        if (isDubugModeRunnig) {
             return "ca-app-pub-3940256099942544/2247696110" // test id
         }
         val mySharedPref = MySharedPref(context)
@@ -167,9 +168,9 @@ class AddIds {
 //            return id
 //        }
 
-    fun gerewardedAdID(context: Activity): String {
+    fun gerewardedAdID(context: Activity,isDubugModeRunnig : Boolean): String {
         var id = ""
-        if (BuildConfig.DEBUG) {
+        if (isDubugModeRunnig) {
             return "ca-app-pub-3940256099942544/5224354917" // test id
         }
         val mySharedPref = MySharedPref(context)
@@ -183,8 +184,8 @@ class AddIds {
         return id
     }
 
-    fun getOpenAppId(mySharedPref: MySharedPref ): String {
-        if (BuildConfig.DEBUG) {
+    fun getOpenAppId(mySharedPref: MySharedPref,isDubugModeRunnig : Boolean ): String {
+        if (isDubugModeRunnig) {
             return "ca-app-pub-3940256099942544/3419835294" // test id
         }
         return mySharedPref.getString(MySharedPref.APP_OPEN)!!

@@ -4,6 +4,7 @@ import android.app.Application
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 import com.module.adsmodule.AppOpenManager
+import com.module.adsmodule.BuildConfig
 
 class App : Application() {
     var appOpenManager: AppOpenManager? = null
@@ -11,7 +12,7 @@ class App : Application() {
         super.onCreate()
 
         FirebaseApp.initializeApp(applicationContext)
-        appOpenManager = AppOpenManager(this, MySharedPref(this))
+        appOpenManager = AppOpenManager(this, MySharedPref(this),BuildConfig.DEBUG)
 
         MobileAds.initialize(
             this

@@ -33,8 +33,8 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     private MySharedPref sharedprefs;
 
 
-    public AppOpenManager(Application myApplication, MySharedPref sharedPref) {
-        AD_UNIT_ID= new AddIds().getOpenAppId(sharedPref);
+    public AppOpenManager(Application myApplication, MySharedPref sharedPref, Boolean isDebugModeRunning ) {
+        AD_UNIT_ID= new AddIds().getOpenAppId(sharedPref,isDebugModeRunning);
         this.myApplication = myApplication;
         this.myApplication.registerActivityLifecycleCallbacks(this);
         ProcessLifecycleOwner.get().getLifecycle().addObserver(this);

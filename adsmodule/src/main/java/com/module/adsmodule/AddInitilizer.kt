@@ -52,6 +52,7 @@ class AddInitilizer {
     var mRewardedAd : RewardedAd? = null
     var mySharedPref : MySharedPref
     var globalCallBackFlag = ""
+    var isDebugmodeRunning = true
 
     lateinit var mAppUpdateManager: AppUpdateManager
     private val RC_APP_UPDATE = 11
@@ -85,7 +86,7 @@ class AddInitilizer {
         }
 
 
-    constructor(context: Context, activity: Activity,onAdsClosedCallBack: OnAdsClosedCallBack?) {
+    constructor(context: Context, activity: Activity,isDebugmodeRunning : Boolean,onAdsClosedCallBack: OnAdsClosedCallBack?) {
         this.context = context
         this.activity = activity
 
@@ -94,6 +95,7 @@ class AddInitilizer {
             loadIntersitialAdd()
         }
 
+        this.isDebugmodeRunning = isDebugmodeRunning
         progressDialog = ProgressDialog(activity)
         progressDialog.setMessage(context.getString(R.string.loading_wait))
         mySharedPref = MySharedPref(activity)
@@ -123,7 +125,7 @@ class AddInitilizer {
 
 
         if(mySharedPref.rewaredVideocurrentCount >= mySharedPref.rewaredVideoCout){
-            RewardedAd.load(context, AddIds().gerewardedAdID(activity),
+            RewardedAd.load(context, AddIds().gerewardedAdID(activity,isDebugmodeRunning),
                 adRequest, object : RewardedAdLoadCallback() {
                     override fun onAdFailedToLoad(@NonNull loadAdError: LoadAdError) {
                         // Handle the error.
@@ -257,7 +259,7 @@ class AddInitilizer {
 
         if (!mySharedPref.isPurshed) {
             val adView = AdView(activity)
-            adView.adUnitId = AddIds().getBannerID(activity)
+            adView.adUnitId = AddIds().getBannerID(activity,isDebugmodeRunning)
             adView.adListener = object : AdListener() {
                 override fun onAdClosed() {
                     super.onAdClosed()
@@ -333,7 +335,7 @@ class AddInitilizer {
          }
 
         if(!mySharedPref.isPurshed){
-            val interstilId = AddIds().getInterstialId(activity)
+            val interstilId = AddIds().getInterstialId(activity,isDebugmodeRunning)
             Log.d(TAG, "****interID "+interstilId)
             val adRequest = AdRequest.Builder().build()
             InterstitialAd.load(activity, interstilId, adRequest,
@@ -409,7 +411,7 @@ class AddInitilizer {
          }
         if(!mySharedPref.isPurshed){
 
-            val getNative = AddIds().getNativeId(activity)
+            val getNative = AddIds().getNativeId(activity,isDebugmodeRunning)
 
             Log.d(TAG, "loadIntersitialAdd:getInter"+getNative)
             adLoader = AdLoader.Builder(activity, getNative)

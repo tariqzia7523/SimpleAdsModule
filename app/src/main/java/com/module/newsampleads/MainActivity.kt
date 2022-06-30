@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.module.ads.AddInitilizer
+import com.module.adsmodule.BuildConfig
 
 class MainActivity : AppCompatActivity() {
     lateinit var addInitilizer: AddInitilizer
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        addInitilizer = AddInitilizer(applicationContext,this){
+        addInitilizer = AddInitilizer(applicationContext,this,BuildConfig.DEBUG){
             // on add close call back will run in this fun
 
 

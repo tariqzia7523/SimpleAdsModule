@@ -242,10 +242,10 @@ public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
             mParam = param;
         }
 
-        public static Builder with(Activity context, RecyclerView.Adapter wrapped, String layout) {
+        public static Builder with(Activity context, RecyclerView.Adapter wrapped, String layout,Boolean isDebugModeRunning) {
 
             Param param = new Param();
-            param.admobNativeId = new AddIds().getNativeId(context);
+            param.admobNativeId = new AddIds().getNativeId(context,isDebugModeRunning);
             param.adapter = wrapped;
 
 
