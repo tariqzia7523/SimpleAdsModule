@@ -39,7 +39,7 @@ you can refer to MainActivity in sample project
 
 make a global variable 
   
-  addInitilizer = AddInitilizer(applicationContext,this){
+  addInitilizer = AddInitilizer(applicationContext,this, BuildConfig.DEBUG){
              // on add close call back will run in this fun
 
 
