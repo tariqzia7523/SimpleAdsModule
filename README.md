@@ -114,7 +114,7 @@ you can also use TemplateView sepratly
             
 
 to add open app add following line of code in Application class oncreate method
-val appOpenManager = AppOpenManager(this, MySharedPref(this))
+val appOpenManager = AppOpenManager(this, MySharedPref(this), BuildConfig.DEBUG)
 
 
 # InApp purcheses
