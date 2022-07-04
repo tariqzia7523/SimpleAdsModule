@@ -35,6 +35,11 @@
  implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.1'
 
 # Usage 
+
+call following code in splash
+
+ AddIds().getAllids(this)
+ 
 you can refer to MainActivity in sample project
 
 make a global variable 
