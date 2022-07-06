@@ -27,6 +27,15 @@
  reward_call
  
  # implementation 
+ Add in project level build.gradle
+ id 'com.google.gms.google-services' version"4.3.10" apply false
+ 
+ add following in app level build.gradle
+ plugins {
+    id 'com.google.gms.google-services'
+}
+ 
+ 
  Add flowing in 
   maven { url 'https://jitpack.io' }
   
