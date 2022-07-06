@@ -18,16 +18,17 @@
         android:layout_height="wrap_content"
         android:text="Show Interstitial"
         android:layout_centerInParent="true"/>
+
     <RelativeLayout
         android:id="@+id/add_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gnt_outline_shape"
-        android:minHeight="@dimen/_130sdp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_alignParentBottom="true">
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/gnt_outline_shape"
+        android:minHeight="@dimen/_130sdp">
 
         <com.module.adsmodule.TemplateView
             android:id="@+id/nativeTemplateView"
