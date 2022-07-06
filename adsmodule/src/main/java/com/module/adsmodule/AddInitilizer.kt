@@ -4,7 +4,6 @@ import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.IntentSender
-import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
 import android.os.Handler
 import android.os.Looper
@@ -36,7 +35,7 @@ import com.module.adsmodule.NativeTemplateStyle
 import com.module.adsmodule.OnAdsClosedCallBack
 import com.module.adsmodule.OnRewardedAddCloseCallBack
 import com.module.adsmodule.TemplateView
-import com.module.adsmodule.R
+
 
 class AddInitilizer {
 
@@ -125,7 +124,7 @@ class AddInitilizer {
 
 
         if(mySharedPref.rewaredVideocurrentCount >= mySharedPref.rewaredVideoCout){
-            RewardedAd.load(context, AddIds().gerewardedAdID(activity,isDebugmodeRunning),
+            RewardedAd.load(context, AddIds(isDebugmodeRunning).gerewardedAdID(activity),
                 adRequest, object : RewardedAdLoadCallback() {
                     override fun onAdFailedToLoad(@NonNull loadAdError: LoadAdError) {
                         // Handle the error.
@@ -259,7 +258,7 @@ class AddInitilizer {
 
         if (!mySharedPref.isPurshed) {
             val adView = AdView(activity)
-            adView.adUnitId = AddIds().getBannerID(activity,isDebugmodeRunning)
+            adView.adUnitId = AddIds(isDebugmodeRunning).getBannerID(activity)
             adView.adListener = object : AdListener() {
                 override fun onAdClosed() {
                     super.onAdClosed()
@@ -335,7 +334,7 @@ class AddInitilizer {
          }
 
         if(!mySharedPref.isPurshed){
-            val interstilId = AddIds().getInterstialId(activity,isDebugmodeRunning)
+            val interstilId = AddIds(isDebugmodeRunning).getInterstialId(activity)
             Log.d(TAG, "****interID "+interstilId)
             val adRequest = AdRequest.Builder().build()
             InterstitialAd.load(activity, interstilId, adRequest,
@@ -411,7 +410,7 @@ class AddInitilizer {
          }
         if(!mySharedPref.isPurshed){
 
-            val getNative = AddIds().getNativeId(activity,isDebugmodeRunning)
+            val getNative = AddIds(isDebugmodeRunning).getNativeId(activity)
 
             Log.d(TAG, "loadIntersitialAdd:getInter"+getNative)
             adLoader = AdLoader.Builder(activity, getNative)

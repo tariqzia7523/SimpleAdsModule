@@ -21,9 +21,9 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.module.ads.AddIds;
 import com.module.ads.MySharedPref;
+import com.module.ads.R;
 import com.module.adsmodule.NativeTemplateStyle;
 import com.module.adsmodule.TemplateView;
-import com.module.adsmodule.R;
 public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
 
     private static final int TYPE_FB_NATIVE_ADS = 900;
@@ -245,7 +245,7 @@ public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
         public static Builder with(Activity context, RecyclerView.Adapter wrapped, String layout,Boolean isDebugModeRunning) {
 
             Param param = new Param();
-            param.admobNativeId = new AddIds().getNativeId(context,isDebugModeRunning);
+            param.admobNativeId = new AddIds(isDebugModeRunning).getNativeId(context);
             param.adapter = wrapped;
 
 

@@ -2,7 +2,8 @@ package com.module.ads
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.module.adsmodule.R
+import android.util.Log
+
 
 class MySharedPref(var context: Context) {
 
@@ -83,6 +84,7 @@ class MySharedPref(var context: Context) {
 
     fun putString(key: String?, value: String?) {
         sharedPreferences.edit().putString(key, value).apply()
+        Log.e("***AdIds", "key $key value $value")
     }
 
     fun getString(key: String?): String? {
@@ -91,6 +93,7 @@ class MySharedPref(var context: Context) {
 
     fun putBoolen(key: String?, value: Boolean) {
         sharedPreferences.edit().putBoolean(key, value).apply()
+        Log.e("***AdIds", "key $key value $value")
     }
 
     fun getBoolen(key: String?): Boolean {
@@ -99,6 +102,7 @@ class MySharedPref(var context: Context) {
 
     fun putInt(key: String?, value: Int) {
         sharedPreferences.edit().putInt(key, value).apply()
+        Log.e("***AdIds", "key $key value $value")
     }
 
     fun getInt(key: String): Int {

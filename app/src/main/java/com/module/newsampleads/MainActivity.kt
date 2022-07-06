@@ -3,16 +3,23 @@ package com.module.newsampleads
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.module.ads.AddIds
+
 import com.module.ads.AddInitilizer
-import com.module.adsmodule.BuildConfig
 
 class MainActivity : AppCompatActivity() {
     lateinit var addInitilizer: AddInitilizer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Call in splash to get all ids from firebase
+        AddIds(false).getAllids(this)
 
-        addInitilizer = AddInitilizer(applicationContext,this,BuildConfig.DEBUG){
+
+        // you can pass true of false
+        //true for debug and true to running release
+
+        addInitilizer = AddInitilizer(applicationContext,this, false){
             // on add close call back will run in this fun
 
 
