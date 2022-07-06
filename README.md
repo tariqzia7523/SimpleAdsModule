@@ -32,7 +32,7 @@
   
   then following line in app gradle
   
- implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.1'
+ implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.5'
 
 # Usage 
 
