@@ -39,7 +39,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.google.ads.mediation:facebook:6.11.0.0'
     implementation 'androidx.lifecycle:lifecycle-process:2.5.0'
-    implementation 'com.google.firebase:firebase-core:21.0.0'
     implementation 'com.google.firebase:firebase-config:21.1.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
