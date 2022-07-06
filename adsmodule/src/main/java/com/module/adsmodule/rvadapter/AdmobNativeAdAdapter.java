@@ -21,8 +21,8 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.module.ads.AddIds;
 import com.module.ads.MySharedPref;
-import com.module.ads.R;
 import com.module.adsmodule.NativeTemplateStyle;
+import com.module.adsmodule.R;
 import com.module.adsmodule.TemplateView;
 public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
 

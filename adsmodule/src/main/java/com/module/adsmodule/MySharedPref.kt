@@ -3,6 +3,7 @@ package com.module.ads
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.module.adsmodule.R
 
 
 class MySharedPref(var context: Context) {
