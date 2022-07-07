@@ -86,13 +86,13 @@ class AddInitilizer {
     constructor(context: Context, activity: Activity,isDebugmodeRunning : Boolean,onAdsClosedCallBack: OnAdsClosedCallBack?) {
         this.context = context
         this.activity = activity
-
+        this.isDebugmodeRunning = isDebugmodeRunning
         if(onAdsClosedCallBack != null){
             this.onAdsClosedCallBack = onAdsClosedCallBack
             loadIntersitialAdd()
         }
 
-        this.isDebugmodeRunning = isDebugmodeRunning
+
         progressDialog = ProgressDialog(activity)
         progressDialog.setMessage(context.getString(R.string.loading_wait))
         mySharedPref = MySharedPref(activity)
