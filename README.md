@@ -117,7 +117,7 @@ you can also use TemplateView sepratly
 
 
  <com.module.ads.TemplateView
-   android:id="@+id/nativeTemplateView"
+    android:id="@+id/nativeTemplateView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="gone"
