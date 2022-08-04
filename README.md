@@ -1,5 +1,5 @@
 # SimpleAdsModule
- This project contains library for easy implementation of ad mob according to ad policies. Moreover ad ids are to be set using remort config (so connect your project to firebase first) These ids will be called only on release, use following keys in remort config firebase , and values are string
+ This project contains library for easy implementation of ad mob according to ad policies. Moreover ad ids are to be set using real time database firebase (so connect your project to firebase first) These ids will be called only on release, use following keys in real time database Firebase , and values are string
  
  app_open
  banner_1
@@ -25,6 +25,8 @@
  native_call
  app_open_call
  reward_call
+ 
+ or you may download json file and import it in firebase real time database from Click [here](https://github.com/tariqzia7523/SimpleAdsModule/blob/main/use_in_real_time_db.json). 
  
  # implementation 
  Add in project level build.gradle
