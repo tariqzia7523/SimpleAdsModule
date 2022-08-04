@@ -45,7 +45,7 @@
   [![](https://jitpack.io/v/tariqzia7523/SimpleAdsModule.svg)](https://jitpack.io/#tariqzia7523/SimpleAdsModule)
 
   
- implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.7'
+ implementation 'com.github.tariqzia7523:SimpleAdsModule:tag'
 
 # Usage 
 
