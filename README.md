@@ -42,8 +42,10 @@
   maven { url 'https://jitpack.io' }
   
   then following line in app gradle
+  [![](https://jitpack.io/v/tariqzia7523/SimpleAdsModule.svg)](https://jitpack.io/#tariqzia7523/SimpleAdsModule)
+
   
- implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.6'
+ implementation 'com.github.tariqzia7523:SimpleAdsModule:1.0.7'
 
 # Usage 
 
