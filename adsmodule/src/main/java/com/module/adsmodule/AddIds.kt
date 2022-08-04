@@ -65,7 +65,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.APP_OPEN,
-                snapshot.child(MySharedPref.APP_OPEN).getValue(String::class.java))
+                snapshot.child(MySharedPref.APP_OPEN).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.APP_OPEN,"")
@@ -73,7 +73,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.INTERSTITIAL_1,
-                snapshot.child(MySharedPref.INTERSTITIAL_1).getValue(String::class.java))
+                snapshot.child(MySharedPref.INTERSTITIAL_1).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.INTERSTITIAL_1,"")
@@ -81,7 +81,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.INTERSTITIAL_2,
-                snapshot.child(MySharedPref.INTERSTITIAL_2).getValue(String::class.java))
+                snapshot.child(MySharedPref.INTERSTITIAL_2).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.INTERSTITIAL_2,"")
@@ -89,7 +89,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.INTERSTITIAL_3,
-                snapshot.child(MySharedPref.INTERSTITIAL_3).getValue(String::class.java))
+                snapshot.child(MySharedPref.INTERSTITIAL_3).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.INTERSTITIAL_3,"")
@@ -97,7 +97,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.INTERSTITIAL_4,
-                snapshot.child(MySharedPref.INTERSTITIAL_4).getValue(String::class.java))
+                snapshot.child(MySharedPref.INTERSTITIAL_4).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.INTERSTITIAL_4,"")
@@ -105,7 +105,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.BANNER_1,
-                snapshot.child(MySharedPref.BANNER_1).getValue(String::class.java))
+                snapshot.child(MySharedPref.BANNER_1).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.BANNER_1,"")
@@ -114,7 +114,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.BANNER_2,
-                snapshot.child(MySharedPref.BANNER_2).getValue(String::class.java))
+                snapshot.child(MySharedPref.BANNER_2).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.BANNER_2,"")
@@ -123,7 +123,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.NATIVE_1,
-                snapshot.child(MySharedPref.NATIVE_1).getValue(String::class.java))
+                snapshot.child(MySharedPref.NATIVE_1).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.NATIVE_1,"")
@@ -132,7 +132,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.NATIVE_2,
-                snapshot.child(MySharedPref.NATIVE_2).getValue(String::class.java))
+                snapshot.child(MySharedPref.NATIVE_2).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.NATIVE_2,"")
@@ -141,7 +141,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.REWARD_1,
-                snapshot.child(MySharedPref.REWARD_1).getValue(String::class.java))
+                snapshot.child(MySharedPref.REWARD_1).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.REWARD_1,"")
@@ -149,7 +149,7 @@ class AddIds( var isDebugRuning : Boolean) {
         try{
             mySharedPref.putString(
                 MySharedPref.REWARD_2,
-                snapshot.child(MySharedPref.REWARD_2).getValue(String::class.java))
+                snapshot.child(MySharedPref.REWARD_2).getValue(String::class.java)!!.trim())
         }catch (e : Exception){
             e.printStackTrace()
             mySharedPref.putString(MySharedPref.REWARD_2,"")

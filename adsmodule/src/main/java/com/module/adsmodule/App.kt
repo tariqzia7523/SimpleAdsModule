@@ -12,7 +12,6 @@ class App : Application() {
         super.onCreate()
 
         FirebaseApp.initializeApp(applicationContext)
-        AddIds(BuildConfig.DEBUG).getAllids(applicationContext)
         appOpenManager = AppOpenManager(this, MySharedPref(this), BuildConfig.DEBUG)
 
 //        MobileAds.initialize(this) { initializationStatus -> //Showing a simple Toast Message to the user when The Google AdMob Sdk Initialization is Completed
