@@ -1,0 +1,21 @@
+{
+  "DATA": {
+    "ad_count": 2,
+    "app_open": "ID app open",
+    "app_open_call": true,
+    "banner_1": "banner id 1",
+    "banner_2": "banner_2 id",
+    "banner_call": true,
+    "interstitial_1": "interstitial_1  id",
+    "interstitial_2": "interstitial_2 id",
+    "interstitial_3": "interstitial_3 id",
+    "interstitial_4": "interstitial_4 id",
+    "interstitial_call": true,
+    "native_1": "native_1 id",
+    "native_2": "native_2 id",
+    "native_call": true,
+    "reward_1": "reward_1 id",
+    "reward_2": "reward_2 id",
+    "reward_call": true
+  }
+}
