@@ -16,35 +16,7 @@ class AddIds( var isDebugRuning : Boolean) {
         var nativeCounter = 1
     }
 
-//    var isDebugRuning = true
-
     fun getAllids(context: Context) {
-//        FirebaseApp.initializeApp(context)
-//        val mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-//        mFirebaseRemoteConfig.fetch(0)
-//            .addOnCompleteListener(context, object : OnCompleteListener<Void?> {
-//                override fun onComplete(task: Task<Void?>) {
-//                    if (task.isSuccessful()) {
-//                        // Toast.makeText(context, "Fetch Succeeded", Toast.LENGTH_SHORT).show()
-//                        Log.e("***Valueis", " Fetch Succeeded ")
-//                        // After config data is successfully fetched, it must be activated before newly fetched
-//                        // values are returned.
-//                        getAllValues(context,mFirebaseRemoteConfig)
-//
-//                    } else {
-//                        //Toast.makeText(context, "Fetch Failed", Toast.LENGTH_SHORT).show()
-//                    }
-//                    // Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show()
-//                }
-//            })
-//        val mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
-//        val configSettings =  FirebaseRemoteConfigSettings.Builder().build()
-//        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings).addOnCompleteListener {
-//            if(it.isSuccessful){
-//                getAllValues(context,mFirebaseRemoteConfig)
-//            }
-//        }
-
         FirebaseDatabase.getInstance().getReference("DATA")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
