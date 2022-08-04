@@ -202,6 +202,16 @@ class AddIds( var isDebugRuning : Boolean) {
             mySharedPref.putBoolen(MySharedPref.REWARD_CALL,true)
         }
 
+
+        try{
+            mySharedPref.putInt(
+                MySharedPref.AD_COUNT,
+                snapshot.child(MySharedPref.AD_COUNT).getValue(Int::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putInt(MySharedPref.AD_COUNT,1)
+        }
+
     }
 
     fun getBannerID(context: Activity): String {
