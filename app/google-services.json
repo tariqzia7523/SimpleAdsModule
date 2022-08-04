@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "435283958768",
+    "firebase_url": "https://sampleaddsproject-default-rtdb.firebaseio.com",
     "project_id": "sampleaddsproject",
     "storage_bucket": "sampleaddsproject.appspot.com"
   },
@@ -10,6 +11,35 @@
         "mobilesdk_app_id": "1:435283958768:android:dda893828f90826625db35",
         "android_client_info": {
           "package_name": "com.call.lled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435283958768-rfdel2icbiv87tdjjesqgr7nlcbb0djc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQnOcoTwq9PqSidC8-jD_1HYhpb5U6XoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435283958768-rfdel2icbiv87tdjjesqgr7nlcbb0djc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435283958768:android:3dd9df42a0360a6425db35",
+        "android_client_info": {
+          "package_name": "com.clap.findmyphone.whistle.phonefinder"
         }
       },
       "oauth_client": [
@@ -68,6 +98,35 @@
         "mobilesdk_app_id": "1:435283958768:android:e3151f2f34623f7c25db35",
         "android_client_info": {
           "package_name": "com.temp.sampleaddsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435283958768-rfdel2icbiv87tdjjesqgr7nlcbb0djc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQnOcoTwq9PqSidC8-jD_1HYhpb5U6XoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435283958768-rfdel2icbiv87tdjjesqgr7nlcbb0djc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435283958768:android:5e67184bf8b728e125db35",
+        "android_client_info": {
+          "package_name": "com.temp.testinglibproject"
         }
       },
       "oauth_client": [

@@ -13,13 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Call in splash to get all ids from firebase
-        AddIds(false).getAllids(this)
 
 
         // you can pass true of false
         //true for debug and true to running release
 
-        addInitilizer = AddInitilizer(applicationContext,this, false){
+        addInitilizer = AddInitilizer(applicationContext,this, BuildConfig.DEBUG){
             // on add close call back will run in this fun
 
 

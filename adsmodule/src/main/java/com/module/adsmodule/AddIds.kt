@@ -1,12 +1,12 @@
 package com.module.ads
 
 import android.app.Activity
+import android.content.Context
 import android.util.Log
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.FirebaseApp
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import kotlin.Exception
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AddIds( var isDebugRuning : Boolean) {
 
@@ -18,65 +18,190 @@ class AddIds( var isDebugRuning : Boolean) {
 
 //    var isDebugRuning = true
 
-    fun getAllids(context: Activity) {
-        FirebaseApp.initializeApp(context)
-        val mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-        mFirebaseRemoteConfig.fetch(0)
-            .addOnCompleteListener(context, object : OnCompleteListener<Void?> {
-                override fun onComplete(task: Task<Void?>) {
-                    if (task.isSuccessful()) {
-                        // Toast.makeText(context, "Fetch Succeeded", Toast.LENGTH_SHORT).show()
-                        Log.e("***Valueis", " Fetch Succeeded ")
-                        // After config data is successfully fetched, it must be activated before newly fetched
-                        // values are returned.
+    fun getAllids(context: Context) {
+//        FirebaseApp.initializeApp(context)
+//        val mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+//        mFirebaseRemoteConfig.fetch(0)
+//            .addOnCompleteListener(context, object : OnCompleteListener<Void?> {
+//                override fun onComplete(task: Task<Void?>) {
+//                    if (task.isSuccessful()) {
+//                        // Toast.makeText(context, "Fetch Succeeded", Toast.LENGTH_SHORT).show()
+//                        Log.e("***Valueis", " Fetch Succeeded ")
+//                        // After config data is successfully fetched, it must be activated before newly fetched
+//                        // values are returned.
+//                        getAllValues(context,mFirebaseRemoteConfig)
+//
+//                    } else {
+//                        //Toast.makeText(context, "Fetch Failed", Toast.LENGTH_SHORT).show()
+//                    }
+//                    // Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show()
+//                }
+//            })
+//        val mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+//        val configSettings =  FirebaseRemoteConfigSettings.Builder().build()
+//        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings).addOnCompleteListener {
+//            if(it.isSuccessful){
+//                getAllValues(context,mFirebaseRemoteConfig)
+//            }
+//        }
 
-                        val mySharedPref = MySharedPref(context)
-                        val appopnid = mFirebaseRemoteConfig.getString("app_open")
-                        Log.e("***Valueis", "The value is " + appopnid)
-                        mySharedPref.putString(MySharedPref.APP_OPEN, mFirebaseRemoteConfig.getString(MySharedPref.APP_OPEN))
-                        mySharedPref.putString(MySharedPref.INTERSTITIAL_1, mFirebaseRemoteConfig.getString(MySharedPref.INTERSTITIAL_1))
-                        mySharedPref.putString(MySharedPref.INTERSTITIAL_2, mFirebaseRemoteConfig.getString(MySharedPref.INTERSTITIAL_2))
-                        mySharedPref.putString(MySharedPref.INTERSTITIAL_3, mFirebaseRemoteConfig.getString(MySharedPref.INTERSTITIAL_3))
-                        mySharedPref.putString(MySharedPref.INTERSTITIAL_4, mFirebaseRemoteConfig.getString(MySharedPref.INTERSTITIAL_4))
-                        mySharedPref.putString(MySharedPref.NATIVE_1, mFirebaseRemoteConfig.getString(MySharedPref.NATIVE_1))
-                        mySharedPref.putString(MySharedPref.NATIVE_2, mFirebaseRemoteConfig.getString(MySharedPref.NATIVE_2))
-                        mySharedPref.putString(MySharedPref.BANNER_1, mFirebaseRemoteConfig.getString(MySharedPref.BANNER_1))
-                        mySharedPref.putString(MySharedPref.BANNER_2, mFirebaseRemoteConfig.getString(MySharedPref.BANNER_2))
-                        mySharedPref.putString(MySharedPref.REWARD_1, mFirebaseRemoteConfig.getString(MySharedPref.REWARD_1))
-                        mySharedPref.putString(MySharedPref.REWARD_2, mFirebaseRemoteConfig.getString(MySharedPref.REWARD_2))
-                        mySharedPref.putString(MySharedPref.REWARD_2, mFirebaseRemoteConfig.getString(MySharedPref.REWARD_2))
-
-                        mySharedPref.putBoolen(MySharedPref.BANNER_CALL, mFirebaseRemoteConfig.getBoolean(MySharedPref.BANNER_CALL))
-                        mySharedPref.putBoolen(MySharedPref.INTER_CALL, mFirebaseRemoteConfig.getBoolean(MySharedPref.INTER_CALL))
-                        mySharedPref.putBoolen(MySharedPref.NATIVE_CALL, mFirebaseRemoteConfig.getBoolean(MySharedPref.NATIVE_CALL))
-                        mySharedPref.putBoolen(MySharedPref.REWARD_CALL, mFirebaseRemoteConfig.getBoolean(MySharedPref.REWARD_CALL))
-                        mySharedPref.putBoolen(MySharedPref.APP_OPEN_CALL, mFirebaseRemoteConfig.getBoolean(MySharedPref.APP_OPEN_CALL))
-
-
-                        Log.e("***Valueis", "saved open app call " + mySharedPref.getBoolen(MySharedPref.APP_OPEN_CALL))
-                        Log.e("***Valueis", "saved banner call " + mySharedPref.getBoolen(MySharedPref.BANNER_CALL))
-                        Log.e("***Valueis", "saved inter call " + mySharedPref.getBoolen(MySharedPref.INTER_CALL))
-                        Log.e("***Valueis", "saved native call " + mySharedPref.getBoolen(MySharedPref.NATIVE_CALL))
-
-
-
-                        try{
-                            mySharedPref.putInt(MySharedPref.AD_COUNT, mFirebaseRemoteConfig.getString(MySharedPref.AD_COUNT).toInt())
-                        }catch (e : Exception){
-                            e.printStackTrace()
-                            mySharedPref.putInt(MySharedPref.AD_COUNT, 0)
-                        }
-
-                        Log.e("***Valueis", "saved value " + mySharedPref.getString(MySharedPref.BANNER_2))
-
-
-                        mFirebaseRemoteConfig.fetchAndActivate()
-                    } else {
-                        //Toast.makeText(context, "Fetch Failed", Toast.LENGTH_SHORT).show()
+        FirebaseDatabase.getInstance().getReference("DATA")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    try{
+                        getAllValues(context,snapshot)
+                    }catch (e : Exception){
+                        e.printStackTrace()
                     }
-                    // Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show()
+                }
+                override fun onCancelled(error: DatabaseError) {
+
                 }
             })
+    }
+
+    private fun getAllValues(context: Context, snapshot : DataSnapshot) {
+        val mySharedPref = MySharedPref(context)
+        try{
+            mySharedPref.putString(
+                MySharedPref.APP_OPEN,
+                snapshot.child(MySharedPref.APP_OPEN).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.APP_OPEN,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.INTERSTITIAL_1,
+                snapshot.child(MySharedPref.INTERSTITIAL_1).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.INTERSTITIAL_1,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.INTERSTITIAL_2,
+                snapshot.child(MySharedPref.INTERSTITIAL_2).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.INTERSTITIAL_2,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.INTERSTITIAL_3,
+                snapshot.child(MySharedPref.INTERSTITIAL_3).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.INTERSTITIAL_3,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.INTERSTITIAL_4,
+                snapshot.child(MySharedPref.INTERSTITIAL_4).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.INTERSTITIAL_4,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.BANNER_1,
+                snapshot.child(MySharedPref.BANNER_1).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.BANNER_1,"")
+        }
+
+        try{
+            mySharedPref.putString(
+                MySharedPref.BANNER_2,
+                snapshot.child(MySharedPref.BANNER_2).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.BANNER_2,"")
+        }
+
+        try{
+            mySharedPref.putString(
+                MySharedPref.NATIVE_1,
+                snapshot.child(MySharedPref.NATIVE_1).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.NATIVE_1,"")
+        }
+
+        try{
+            mySharedPref.putString(
+                MySharedPref.NATIVE_2,
+                snapshot.child(MySharedPref.NATIVE_2).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.NATIVE_2,"")
+        }
+
+        try{
+            mySharedPref.putString(
+                MySharedPref.REWARD_1,
+                snapshot.child(MySharedPref.REWARD_1).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.REWARD_1,"")
+        }
+        try{
+            mySharedPref.putString(
+                MySharedPref.REWARD_2,
+                snapshot.child(MySharedPref.REWARD_2).getValue(String::class.java))
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putString(MySharedPref.REWARD_2,"")
+        }
+
+        try{
+            mySharedPref.putBoolen(
+                MySharedPref.APP_OPEN_CALL,
+                snapshot.child(MySharedPref.APP_OPEN_CALL).getValue(Boolean::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putBoolen(MySharedPref.APP_OPEN_CALL,true)
+        }
+
+        try{
+            mySharedPref.putBoolen(
+                MySharedPref.BANNER_CALL,
+                snapshot.child(MySharedPref.BANNER_CALL).getValue(Boolean::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putBoolen(MySharedPref.BANNER_CALL,true)
+        }
+
+        try{
+            mySharedPref.putBoolen(
+                MySharedPref.INTER_CALL,
+                snapshot.child(MySharedPref.INTER_CALL).getValue(Boolean::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putBoolen(MySharedPref.INTER_CALL,true)
+        }
+
+
+        try{
+            mySharedPref.putBoolen(
+                MySharedPref.NATIVE_CALL,
+                snapshot.child(MySharedPref.NATIVE_CALL).getValue(Boolean::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putBoolen(MySharedPref.NATIVE_CALL,true)
+        }
+
+
+        try{
+            mySharedPref.putBoolen(
+                MySharedPref.REWARD_CALL,
+                snapshot.child(MySharedPref.REWARD_CALL).getValue(Boolean::class.java)!!)
+        }catch (e : Exception){
+            e.printStackTrace()
+            mySharedPref.putBoolen(MySharedPref.REWARD_CALL,true)
+        }
+
     }
 
     fun getBannerID(context: Activity): String {
@@ -247,4 +372,3 @@ class AddIds( var isDebugRuning : Boolean) {
         return mySharedPref.getString(MySharedPref.APP_OPEN)!!
     }
 }
-
